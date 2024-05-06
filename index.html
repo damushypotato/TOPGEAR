@@ -6,22 +6,63 @@
         <title>TopGear</title>
         <meta name="description" content="Everything car parts!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="src/main.css" />
         <link rel="stylesheet" href="src/index.css" />
     </head>
     <body>
         <nav class="navbar">
-            <div class="branding">
+            <a class="branding" href="/">
                 <img src="assets/logo.png" alt="TopGear logo" class="logo" />
                 <h1 class="title">TopGear</h1>
-            </div>
+            </a>
             <div class="nav-opts">
-                <a href="" class="nav-link">Shop</a>
-                <a href="" class="nav-link">Tuner</a>
-                <a href="" class="nav-link">Paint</a>
+                <a href="/shop.html" class="nav-link">Shop</a>
+                <a href="/tuner.html" class="nav-link">Tuner</a>
+                <a href="/paint.html" class="nav-link">Paint</a>
             </div>
         </nav>
 
-        <main class="main"></main>
+        <main class="main">
+            <div class="section welcome">
+                <h1>Welcome to TopGear!</h1>
+                <img src="assets/img/TOPGEAR.webp" alt="CLARKSON!!!" class="image" />
+                <h2>Want to mod your car? We got you covered.</h2>
+                <p>
+                    TopGear is your one-stop shop for all your car modding needs. We have a wide
+                    selection of parts, tuners, and paint options to make your car stand out from
+                    the rest.
+                </p>
+                <p>
+                    Explore our site to find what you need to make your car truly unique. Whether
+                    you are looking for performance parts, a new paint job, or a tuner to help you
+                    get the most out of your car, we have you covered.
+                </p>
+            </div>
+            <hr />
+            <div class="section">
+                <h2>Our shop</h2>
+                <p>Need parts? We have a wide selection of parts for your car.</p>
+                <button class="btn" id="shop-btn">Shop now</button>
+            </div>
+            <hr />
+            <div class="section">
+                <h2>Performance tuner</h2>
+                <p>
+                    Looking to get the most out of your car? Our tuner can help simulate the best
+                    performance upgrades for your car.
+                </p>
+                <button class="btn" id="tuner-btn">Try it</button>
+            </div>
+            <hr />
+            <div class="section">
+                <h2>Paint shop</h2>
+                <p>
+                    Want to give your car a fresh look? Our paint shop has a wide selection of
+                    colors to choose from and visualise.
+                </p>
+                <button class="btn" id="paint-btn">Paint now</button>
+            </div>
+        </main>
 
         <script src="src/index.js" type="module" async defer></script>
     </body>

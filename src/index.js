@@ -1,38 +1,8 @@
-import catalogue from '../assets/catalogue.json' assert { type: 'json' };
-const { products } = catalogue;
+const shop_btn = document.getElementById('shop-btn');
+shop_btn.onclick = () => (window.location.href = '/shop.html');
 
-const categories = [
-    'Engine',
-    'Exhaust',
-    'Suspension',
-    'Bodykits',
-    'Brakes',
-    'Gear',
-    'Drivetrain',
-    'Misc',
-    'Cooling',
-    'Lighting',
-];
+const tuner_btn = document.getElementById('tuner-btn');
+tuner_btn.onclick = () => (window.location.href = '/tuner.html');
 
-const main = document.querySelector('main');
-
-for (const category of categories) {
-    const section = document.createElement('div');
-    section.classList.add('category');
-    main.appendChild(section);
-
-    const title = document.createElement('h2');
-    title.textContent = category;
-    section.appendChild(title);
-
-    const list = document.createElement('ul');
-    section.appendChild(list);
-
-    for (const product of products) {
-        if (product.category === category) {
-            const item = document.createElement('li');
-            item.textContent = product.name;
-            list.appendChild(item);
-        }
-    }
-}
+const paint_btn = document.getElementById('paint-btn');
+paint_btn.onclick = () => (window.location.href = '/paint.html');

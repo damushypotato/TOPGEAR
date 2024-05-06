@@ -1,0 +1,40 @@
+.search {
+    display: flex;
+    justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75em;
+}
+
+.search input,
+.search select {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75em;
+}
+
+.sear {
+    padding: 0 2em;
+}
+
+.sea {
+    padding: 0 0.5em;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shop_item {
+    margin: 1em;
+    border: 0.2em solid #1f91d3;
+}
+
+.shop_item img {
+    max-height: 10em;
+}
