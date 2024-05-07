@@ -23,6 +23,10 @@ function setFilteredList(p, s) {
 
 const shop = document.querySelector('.shop');
 
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('details-modal');
+const modalClose = document.getElementById('modal-close');
+
 const search = document.getElementById('search');
 search.addEventListener('input', searchProducts);
 
@@ -106,5 +110,27 @@ function renderProducts(_p, _s) {
         item.appendChild(info);
 
         shop.appendChild(item);
+
+        item.addEventListener('click', () => openModal(product));
     }
 }
+
+function openModal(product) {
+    modalContent.innerHTML = `
+        <img src="${product.image}" />
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <p>Category: ${product.category}</p>
+        <p>Price: $${product.price.toFixed(2)}</p>
+    `;
+
+    modal.style.display = 'block';
+}
+
+modalClose.addEventListener('click', () => (modal.style.display = 'none'));
+
+window.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
