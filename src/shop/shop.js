@@ -36,7 +36,7 @@ filter.addEventListener('change', e => {
         setFilteredList(products);
         return;
     }
-    const items = filteredProducts.filter(product => product.category === category);
+    const items = products.filter(product => product.category === category);
     setFilteredList(items, sort.value);
 });
 
@@ -73,24 +73,37 @@ function renderProducts(_p, _s) {
     } else if (_s === 'rel') {
         _p.sort((a, b) => a.name.localeCompare(b.name));
     }
+
     for (const product of _p) {
         const item = document.createElement('div');
-        item.className = 'shop_item';
-        const name = document.createElement('h3');
-        name.textContent = product.name;
-        item.appendChild(name);
+        const info = document.createElement('div');
+        const details = document.createElement('div');
         const image = document.createElement('img');
+        const name = document.createElement('h3');
+        const category = document.createElement('p');
+        const price = document.createElement('p');
+
+        item.className = 'shop_item';
+        info.className = 'shop_item_info';
+        details.className = 'shop_item_details';
+        price.className = 'shop_item_price';
+        category.className = 'shop_item_category';
+
         image.src = product.image;
         item.appendChild(image);
-        const category = document.createElement('p');
+
+        name.textContent = product.name;
+        info.appendChild(name);
+
+        price.textContent = `$${product.price.toFixed(2)}`;
+        details.appendChild(price);
+
         category.textContent = product.category;
-        item.appendChild(category);
-        const description = document.createElement('p');
-        description.textContent = product.description;
-        item.appendChild(description);
-        const price = document.createElement('p');
-        price.textContent = `$${product.price}`;
-        item.appendChild(price);
+        details.appendChild(category);
+
+        info.appendChild(details);
+
+        item.appendChild(info);
 
         shop.appendChild(item);
     }
